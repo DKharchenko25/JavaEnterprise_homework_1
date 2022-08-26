@@ -6,10 +6,14 @@
     <bean id="nameVerificationService" class="com.dkharchenko_hillel.homework1.NameVerificationService">
         <property name="user" ref="user"/>
     </bean>
+    <bean id="user" class="com.dkharchenko_hillel.homework1.User"/>
     <bean id="quizService" class="com.dkharchenko_hillel.homework1.QuizService">
+        <property name="resourceReader" ref="resourceReader"/>
+        <property name="user" ref="user"/>
+    </bean>
+    <bean id="resourceReader" class="com.dkharchenko_hillel.homework1.ResourceReader" init-method="readResource">
         <property name="resource" value="questions.csv"/>
     </bean>
-    <bean id="user" class="com.dkharchenko_hillel.homework1.User"/>
 
 
 </beans>
